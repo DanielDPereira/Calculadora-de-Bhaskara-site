@@ -1,0 +1,19 @@
+body{
+    background-color: rgba(11, 11, 230, 0.11)!important;
+}
+
+.created-by{
+    position: fixed;
+    display: flex;
+    top: 95%;
+    left: 1%;
+}
+
+input{
+    border-radius: 5px;
+    color: #0d49b9;
+}
+
+input::placeholder {
+    color: #0d49b9;
+}
