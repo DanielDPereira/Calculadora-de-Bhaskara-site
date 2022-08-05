@@ -73,7 +73,8 @@ btn.addEventListener("click", function(e){
     if (delta == 0){
         document.getElementById("-D").innerHTML ="";
         document.getElementById("Resultado D").innerHTML ="<b>Delta = </b>"+delta;
-        document.getElementById("Resultado X1").innerHTML ="<b>X1 e X2= </b>"+X1;
+        document.getElementById("Resultado X1").innerHTML ="<b>X1 e X2 = </b>"+X1;
+        document.getElementById("Resultado X2").innerHTML ="";
     }
 
     //Retornando valores no HTML - fim
