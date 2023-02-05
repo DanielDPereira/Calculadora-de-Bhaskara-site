@@ -22,61 +22,70 @@ btn.addEventListener("click", function(e){
 
     //Código da calculadora - início
 
-    //Delta
-    delta = (Math.pow(valueb, 2)-4 * valuea * valuec)
+    if (valuea == 0){
+        document.getElementById("Resultado D").innerHTML ="<b>Não é possível calcular, pois A não pode ser 0.</b>"
+        document.getElementById("Resultado X1").innerHTML =""
+        document.getElementById("Resultado X2").innerHTML =""
 
-    //Se delta negativo
-    if (delta < 0){
-        console.log("A equação não possui valores reais");
-        X1 = "Ø"
-        X2 = "Ø"
-    }
+    }else{
+        //Delta
+        delta = (Math.pow(valueb, 2)-4 * valuea * valuec)
 
-    //Se delta positivo
-    if (delta > 0){
-        X1 = (-1 * valueb + Math.sqrt(delta))/(2 * valuea);
-        X2 = (-1 * valueb - Math.sqrt(delta))/(2 * valuea);
-    }
+        //Se delta negativo
+        if (delta < 0){
+            console.log("A equação não possui valores reais");
+            X1 = "Ø"
+            X2 = "Ø"
+        }
 
-    //Código da calculadora - fim  
+        //Se delta positivo
+        if (delta > 0){
+            X1 = (-1 * valueb + Math.sqrt(delta))/(2 * valuea);
+            X2 = (-1 * valueb - Math.sqrt(delta))/(2 * valuea);
+        }
 
-    //print dos resultados no console - início
+        //Código da calculadora - fim  
 
-    console.log("Delta = "+delta);
-    console.log("X1 = "+X1);
-    console.log("X2 = "+X2);
+        //print dos resultados no console - início
 
-    //print dos resultados no console - fim
+        console.log("Delta = "+delta);
+        console.log("X1 = "+X1);
+        console.log("X2 = "+X2);
 
-    //Retornando valores no HTML - início
+        //print dos resultados no console - fim
 
-    //Se delta negativo
+        //Retornando valores no HTML - início
 
-    if (delta < 0){
-    document.getElementById("-D").innerHTML ="<br>Delta é negativo";
-    document.getElementById("Resultado D").innerHTML ="Por Delta ser negativo, a equação não possui uma solução entre os números reais";
-    document.getElementById("Resultado X1").innerHTML ="<b>X1 = </b>Ø";
-    document.getElementById("Resultado X2").innerHTML ="<b>X2 = </b>Ø";
-    }
+        //Se delta negativo
 
-    //Se delta positivo
+        if (delta < 0){
+        document.getElementById("-D").innerHTML ="<br>Delta é negativo";
+        document.getElementById("Resultado D").innerHTML ="Por Delta ser negativo, a equação não possui uma solução entre os números reais";
+        document.getElementById("Resultado X1").innerHTML ="<b>X1 = </b>Ø";
+        document.getElementById("Resultado X2").innerHTML ="<b>X2 = </b>Ø";
+        }
 
-    if (delta > 0){
-    document.getElementById("-D").innerHTML ="";
-    document.getElementById("Resultado D").innerHTML ="<b>Delta = </b>"+delta;
-    document.getElementById("Resultado X1").innerHTML ="<b>X1 = </b>"+X1;
-    document.getElementById("Resultado X2").innerHTML ="<b>X2 = </b>"+X2;
-    }
+        //Se delta positivo
 
-    //Se delta for 0
-
-    if (delta == 0){
+        if (delta > 0){
         document.getElementById("-D").innerHTML ="";
         document.getElementById("Resultado D").innerHTML ="<b>Delta = </b>"+delta;
         document.getElementById("Resultado X1").innerHTML ="<b>X1 = </b>"+X1;
         document.getElementById("Resultado X2").innerHTML ="<b>X2 = </b>"+X2;
+        }
+
+        //Se delta for 0
+
+        if (delta == 0){
+            document.getElementById("-D").innerHTML ="";
+            document.getElementById("Resultado D").innerHTML ="<b>Delta = </b>"+delta;
+            document.getElementById("Resultado X1").innerHTML ="<b>X1 = </b>"+X1;
+            document.getElementById("Resultado X2").innerHTML ="<b>X2 = </b>"+X2;
+        }
+
+        //Retornando valores no HTML - fim
     }
-
-    //Retornando valores no HTML - fim
-
 });
+
+
+
